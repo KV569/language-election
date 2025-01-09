@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>ELECTION</title>
+
+     <link href="//fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="election.css">
+</head>
+
+<body>
+  <script>
+    function play() {
+      var audio = document.getElementById("audio");
+      audio.play();
+    }
+  </script> 
+
+    
+    
+    <section class="w3l-main-slider banner-slider" id="home">
+        <div class="slider-info banner-view banner-top1">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <form id="submit-form" action="">
+                        
+                              <div>
+                                <label>
+                                  <input type="radio" name="ELECTED" value="ARABIC" onclick="play()" required="required">
+                                  <audio id="audio" src="sound/tone.mp3"></audio>
+                                  <img class="img-fluid" src="images/arabic.jpg">
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="ELECTED" value="URDU" onclick="play()" required="required">
+                                  <audio id="audio" src="sound/tone.mp3"></audio>
+                                  <img src="images/urdu.jpg">
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="ELECTED" value="ENGLISH" onclick="play()" required="required">
+                                  <audio id="audio" src="sound/tone.mp3"></audio>
+                                  <img src="images/english.jpg">
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="ELECTED" value="MALAYALAM" onclick="play()" required="required">
+                                  <audio id="audio" src="sound/tone.mp3"></audio>
+                                  <img src="images/malayalam.jpg">
+                                </label>
+                              </div>
+                              
+                            </div>
+                            <input type="submit" value="Submit">
+                          </div>
+                        </form>
+                          <script>
+                            $("#submit-form").submit((e) => {
+                              e.preventDefault()
+                              $.ajax({
+                                url: "https://script.google.com/macros/s/AKfycbz9gsDyeOIWw78qyqoi1iWkT1EWJobgJuPkSFqPihJuF_didy49Zy7f5kwTokhyvZ9aLg/exec",
+                                data: $("#submit-form").serialize(),
+                                method: "post",
+                                success: function (response) {
+                                  alert("VOTE submitted successfully")
+                                  window.location.reload()
+                                  window.location.href="election.html"
+                                },
+                                error: function (err) {
+                                  alert("Something Error")
+                        
+                                }
+                              })
+                            })
+                          </script>
+                   
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+</section>
+    
+    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
